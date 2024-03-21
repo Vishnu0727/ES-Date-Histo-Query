@@ -11,6 +11,7 @@ curl -s -H "Content-Type: application/x-ndjson" -XPOST localhost:9200/test/_bulk
 
 Search query,
 
+curl -X POST "localhost:9200/test/_search?size=0&pretty" -H 'Content-Type: application/json' -d'
 {
   "explain": false,
   "size": 0,
@@ -36,7 +37,7 @@ Search query,
     "timeslice|timehisto": {
       "date_histogram": {
 	"field": "messagetime",
-	"fixed_interval": "40m",
+	"fixed_interval": "41m",
 	"time_zone": "America/Los_Angeles",
 	"keyed": false,
 	"min_doc_count": 0,
